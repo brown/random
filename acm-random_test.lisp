@@ -54,9 +54,9 @@
         (random-zero (make-instance 'acm-random :seed 0))
         (random-m (make-instance 'acm-random :seed acm-random::+m+))
         (expected (mod acm-random::+a+ acm-random::+m+)))
-    (is (= (next-uint32 random-minus-one)
-           (next-uint32 random-zero)
-           (next-uint32 random-m)
+    (is (= (next-uint31 random-minus-one)
+           (next-uint31 random-zero)
+           (next-uint31 random-m)
            expected))))
 
 (deftest expected-32-bit-values ()
@@ -67,7 +67,7 @@
         (random (make-instance 'acm-random)))
     (loop repeat 1000 do
       (setf r (mod (* r a) m))
-      (is (= (next-uint32 random) r)))))
+      (is (= (next-uint31 random) r)))))
 
 (deftest expected-64-bit-values ()
   "Tests expected 64-bit random values from the default seed."
@@ -83,8 +83,8 @@
           for golden in expected
           do (let ((value (next-uint62 random1)))
                (when golden (is (= value golden)))
-               (let* ((first (next-uint32 random2))
-                      (second (next-uint32 random2)))
+               (let* ((first (next-uint31 random2))
+                      (second (next-uint31 random2)))
                  (is (= value (+ (* (1- first) (1- m)) second))))))))
 
 (deftest random-api-next ()
