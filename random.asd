@@ -31,11 +31,12 @@
 (defsystem random
   :name "Random"
   :description "Some simple random number generators."
-  :version "0.1"
+  :version "0.2"
   :author "Robert Brown"
   :license "New BSD license.  See the copyright messages in individual files."
+  :defsystem-depends-on (com.google.base)
   :depends-on (com.google.base)
   :in-order-to ((test-op (test-op random-test)))
   :components
   ((:file "random-package")
-   (:file "random" :depends-on ("random-package"))))
+   (:fast-unsafe-source-file "random" :depends-on ("random-package"))))

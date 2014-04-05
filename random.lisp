@@ -31,7 +31,6 @@
 ;;;; Random number generator interface.
 
 (in-package #:random)
-(declaim #.*optimize-fast-unsafe*)
 
 (defgeneric reset (random)
   (:documentation "Resets RANDOM to a default state."))

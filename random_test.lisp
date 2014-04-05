@@ -41,7 +41,6 @@
   (:export #:test-random))
 
 (in-package #:random-test)
-(declaim #.*optimize-default*)
 
 (defsuite (test-random :in root-suite) ()
   (run-child-tests))

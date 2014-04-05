@@ -31,7 +31,6 @@
 ;;;; ACM random number generator.
 
 (in-package #:acm-random)
-(declaim #.*optimize-fast-unsafe*)
 
 (defconst +a+ 16807)
 (defconst +m+ (1- (expt 2 31)))

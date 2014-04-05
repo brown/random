@@ -41,7 +41,6 @@
   (:export #:test-acm-random))
 
 (in-package #:acm-random-test)
-(declaim #.*optimize-default*)
 
 (defsuite (test-acm-random :in root-suite) ()
   (run-child-tests))

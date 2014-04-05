@@ -31,11 +31,12 @@
 (defsystem acm-random
   :name "ACM Random"
   :description "A fast, cryptographically insecure, random number generator."
-  :version "0.1"
+  :version "0.2"
   :author "Robert Brown"
   :license "New BSD license.  See the copyright messages in individual files."
+  :defsystem-depends-on (com.google.base)
   :depends-on (com.google.base random)
   :in-order-to ((test-op (test-op acm-random-test)))
   :components
   ((:file "acm-random-package")
-   (:file "acm-random" :depends-on ("acm-random-package"))))
+   (:fast-unsafe-source-file "acm-random" :depends-on ("acm-random-package"))))
