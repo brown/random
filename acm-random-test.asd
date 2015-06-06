@@ -29,6 +29,11 @@
 ;;;; Author: brown@google.com (Robert Brown)
 
 (defsystem acm-random-test
+  :name "ACM Random test"
+  :description "Test code for package ACM-RANDOM."
+  :version "0.2"
+  :author "Robert Brown"
+  :license "New BSD license.  See the copyright messages in individual files."
   :depends-on (acm-random hu.dwim.stefil)
   :components
   ((:file "acm-random_test")))

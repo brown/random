@@ -29,6 +29,11 @@
 ;;;; Author: brown@google.com (Robert Brown)
 
 (defsystem random-test
+  :name "Random test"
+  :description "Test code for package RANDOM."
+  :version "0.2"
+  :author "Robert Brown"
+  :license "New BSD license.  See the copyright messages in individual files."
   :depends-on (random hu.dwim.stefil)
   :components
   ((:file "random_test")))
